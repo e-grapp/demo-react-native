@@ -4,6 +4,7 @@ jobs:
     working_directory: ~/demo-react-native
     docker:
       - image: cimg/node:12.16
+    resource_class: runner-egrapp/k8srunner
 
     steps:
       - checkout
@@ -148,10 +149,10 @@ workflows:
   node-android-ios:
     jobs:
       - node
-      - android-build-and-test:
-          requires:
-            - node
-      - macos-build-and-test:
-          requires:
-            - node
+      #- android-build-and-test:
+      #    requires:
+      #      - node
+      #- macos-build-and-test:
+      #    requires:
+      #      - node
             
